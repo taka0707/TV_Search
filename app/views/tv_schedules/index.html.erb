@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <div class="header">
+    <% if user_signed_in? %>
+      <div class="UserInfo">
+        <div class="UserName"><%= current_user.name %></div>
+        <ul>
+          <li><%= link_to 'イベント作成', '#', class: "CreateEvent" %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        </ul>
+      </div>
+      <form class="SearchForm">
+        <%= form_with(url: '#', local: true, method: :get) do |form| %>
+        <%= form.text_field :keyword, placeholder: "番組を検索する", class: "SearchInput" %>
+        <%= form.submit "検索", class: "SearchBtn" %>
+        <% end %>
+      </form>
+    <% else %>
+      <div class="UserInfo">
+        <div class="UserName">TVSearcher</div>
+        <ul>
+          <li><%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
+          <li><%= link_to "新規登録", new_user_registration_path, class: 'post' %></li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+    <div class="Main">
+      <div class="MainBox">
+        <div class="ContentBox">
+            <div class="ContentDate"></div>
+            <div class="contents">
+              <div class="ContentTitle"></div>
+              <div class="ContentBody"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
