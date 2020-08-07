@@ -22,3 +22,49 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# TV_SEARCHER
+
+## アプリケーション概要
+- 検索したいワードと、ジャンルを指定してテレビ番組検索が行え、その結果が一週間単位で確認出来る
+
+## URL
+
+## テスト用アカウント
+
+## 利用方法
+
+## 目指した課題解決
+
+## 洗い出した要件
+
+## 実装した機能
+
+## 実装予定の機能
+
+## ローカルでの操作方法
+
+## DB設計
+
+### usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false|
+|password|password|null: false|
+
+### Association
+- has_many :tv_schedules
+
+### tv_schedulesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|title|string|null: false|
+|channel|string|null: false|
+|start_time|datetime|null: false|
+|user_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
