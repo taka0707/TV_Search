@@ -1,0 +1,32 @@
+.AccountPage {
+  height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  background-color: cadetblue;
+}
+
+.AccountPage_title {
+  text-align: center;
+  height: 20%;
+  font-size: 36px;
+}
+
+.FormContents {
+  text-align: center;
+  height: 80%;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+input { 
+  border: 1px solid black;
+  background-color: cornsilk;
+}
+
+.submit {
+  margin: 10px 0;
+  background-color: darkgoldenrod;
+  width: 100px;
+}
