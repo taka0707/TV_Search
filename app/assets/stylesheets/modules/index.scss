@@ -1,0 +1,101 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+}
+
+.header {
+  height: 100px;
+  width: 100%;
+  padding: 10px 40px;
+  background-color: darkcyan;
+  display: flex;
+}
+
+.UserInfo {
+  width: 250px;
+  text-align: center;
+  color: darkorange;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.UserName {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.SearchForm {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+.SearchInput {
+  width: calc(100% - 280px);
+  margin-right: 20px;
+  height: 30px;
+}
+
+.SearchBtn {
+  width: 80px;
+}
+
+.Main {
+  height: calc(100% - 100px);
+  width: 100%;
+  background-color: blanchedalmond;
+  padding: 20px 50px;
+}
+
+.MainBox {
+  height: 100%;
+  width: 100%;
+  background-color: burlywood;
+  padding: 10px;
+  overflow: scroll;
+}
+
+.ContentBox {
+  height: 200px;
+  width: 100%;
+  background-color: #ff7f50;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.ContentDate {
+  height: 100%;
+  width: 30%;
+  background-color: cornflowerblue;
+}
+
+.contents {
+  height: 100%;
+  width: 70%;
+  background-color: crimson;
+}
+
+.ContentTitle {
+  height: 50%;
+  width: 100%;
+  background-color: cyan;
+}
+
+.ContentBody {
+  height: 50%;
+  width: 100%;
+  background-color: darkgray;
+}

@@ -1,0 +1,2 @@
+class TvSchedulesController < ApplicationController
+end
