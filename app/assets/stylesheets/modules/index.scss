@@ -62,65 +62,19 @@ ul {
   width: 80px;
 }
 
-.Main {
-  height: calc(100% - 100px);
-  width: 100%;
-  background-color: blanchedalmond;
-  padding: 20px 50px;
-}
-
-.MainBox {
-  height: 100%;
-  width: 100%;
-  background-color: burlywood;
-  padding: 10px;
-  overflow: scroll;
-}
-
-.ContentBox {
-  height: 200px;
-  width: 100%;
-  background-color: #ff7f50;
-  margin-bottom: 10px;
-  display: flex;
-}
-
-.ContentDate {
-  height: 100%;
-  width: 30%;
-  background-color: cornflowerblue;
-}
-
-.contents {
-  height: 100%;
-  width: 70%;
-  background-color: crimson;
-}
-
-.ContentTitle {
-  height: 50%;
-  width: 100%;
-  background-color: cyan;
-}
-
-.ContentBody {
-  height: 50%;
-  width: 100%;
-  background-color: darkgray;
-}
-
 .TvTitle {
   margin-bottom: 5px;
+  border: 1px solid deeppink;
 }
 
 .start_time {
-  background-color: darkgray;
+  background-color: #FFDDFF;
 }
 
 .channel {
-  background-color: darkkhaki;
+  background-color: #FFFFCC;
 }
 
 .title {
-  background-color: darksalmon;
+  background-color: #BBFFFF;
 }
