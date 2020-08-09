@@ -5,11 +5,17 @@ html {
 body {
   height: 100%;
   margin: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .wrapper {
   height: 100vh;
   width: 100vw;
+  background-color: darkcyan;
 }
 
 .header {
@@ -27,7 +33,10 @@ body {
 }
 
 ul {
-  list-style: none;
+  list-style: none; 
+}
+
+.link_box {
   display: flex;
   justify-content: space-around;
 }
@@ -98,4 +107,20 @@ ul {
   height: 50%;
   width: 100%;
   background-color: darkgray;
+}
+
+.TvTitle {
+  margin-bottom: 5px;
+}
+
+.start_time {
+  background-color: darkgray;
+}
+
+.channel {
+  background-color: darkkhaki;
+}
+
+.title {
+  background-color: darksalmon;
 }
