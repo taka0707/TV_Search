@@ -5,11 +5,17 @@ html {
 body {
   height: 100%;
   margin: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .wrapper {
   height: 100vh;
   width: 100vw;
+  background-color: darkcyan;
 }
 
 .header {
@@ -27,7 +33,10 @@ body {
 }
 
 ul {
-  list-style: none;
+  list-style: none; 
+}
+
+.link_box {
   display: flex;
   justify-content: space-around;
 }
@@ -53,49 +62,19 @@ ul {
   width: 80px;
 }
 
-.Main {
-  height: calc(100% - 100px);
-  width: 100%;
-  background-color: blanchedalmond;
-  padding: 20px 50px;
+.TvTitle {
+  margin-bottom: 5px;
+  border: 1px solid deeppink;
 }
 
-.MainBox {
-  height: 100%;
-  width: 100%;
-  background-color: burlywood;
-  padding: 10px;
-  overflow: scroll;
+.start_time {
+  background-color: #FFDDFF;
 }
 
-.ContentBox {
-  height: 200px;
-  width: 100%;
-  background-color: #ff7f50;
-  margin-bottom: 10px;
-  display: flex;
+.channel {
+  background-color: #FFFFCC;
 }
 
-.ContentDate {
-  height: 100%;
-  width: 30%;
-  background-color: cornflowerblue;
-}
-
-.contents {
-  height: 100%;
-  width: 70%;
-  background-color: crimson;
-}
-
-.ContentTitle {
-  height: 50%;
-  width: 100%;
-  background-color: cyan;
-}
-
-.ContentBody {
-  height: 50%;
-  width: 100%;
-  background-color: darkgray;
+.title {
+  background-color: #BBFFFF;
 }

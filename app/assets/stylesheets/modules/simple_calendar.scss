@@ -1,0 +1,69 @@
+.simple-calendar {
+  background-color: darkcyan;
+  height: calc(100vh - 100px);
+  width: 100vw;
+  padding: 10px;
+
+  .calendar-heading {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .calendar-title {
+    font-size: 24px;
+    color: darkorange;
+    font-weight: bold;
+    margin: 0 20px;
+  }
+
+  thead, tbody {
+    display: block;
+  }
+
+  tbody {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: calc(100vh - 200px);
+  }
+
+  .table {
+    background-color: deeppink;
+    width: 100%;
+    height: auto;
+  }
+
+  th {
+    // display: table-cell;
+	  width: 14vw;
+  }
+  
+  .day {
+    // display: table-cell;
+	  width: 14vw;
+    background-color: floralwhite;
+    vertical-align: top;
+    text-align: center;
+    height: 100%;
+  }
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {}
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { }
+  .current-month {}
+
+  .has-events {}
+}

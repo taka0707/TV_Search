@@ -54,3 +54,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'pry-rails'
+gem 'nokogiri'
+gem 'mechanize'
+gem 'chronic', '~> 0.10.2'
+gem 'simple_calendar', '~> 2.0'

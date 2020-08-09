@@ -12,7 +12,7 @@
         <%= form.submit "検索", class: "SearchBtn" %>
         <% end %>
     </div>
-      <%= week_calendar number_of_weeks: 1 do |date, tvs| %>
+      <%= week_calendar number_of_weeks: 1, events: @tvs do |date, tvs| %>
       
         <%= date.day %>
 
