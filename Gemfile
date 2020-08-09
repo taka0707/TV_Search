@@ -58,3 +58,6 @@ gem 'nokogiri'
 gem 'mechanize'
 gem 'chronic', '~> 0.10.2'
 gem 'simple_calendar', '~> 2.0'
+group :production do
+  gem 'rails_12factor'
+end
