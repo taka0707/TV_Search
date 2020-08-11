@@ -1,4 +1,5 @@
 class TvSchedulesController < ApplicationController
+  before_action :set_time_zone, only: :DateTimeEdit
   require "nokogiri"
   require 'chronic'
 
@@ -12,7 +13,7 @@ class TvSchedulesController < ApplicationController
       page = agent.get("https://tv.yahoo.co.jp/listings/realtime/")
       form = page.forms[0]
       form.q = word
-      page = agent.submit(form)     
+      page = agent.submit(form)
       date_docs = page.css(".leftarea > p > em")
       if date_docs.present?
         title_docs = page.css(".rightarea > .yjLS > a")
@@ -44,7 +45,7 @@ class TvSchedulesController < ApplicationController
     @docs.each do |doc|
       date = doc.join(" ")
       date.slice!(/～(.+)/)
-      @dates << Chronic.parse(date).to_s(:datetime)
+      @dates << Chronic.parse(date, :now => Time.local(Time.current.year)).to_s(:datetime)
     end
   end
 
@@ -60,6 +61,10 @@ class TvSchedulesController < ApplicationController
     channel_docs.each do |doc3|
       @channels << doc3.text unless doc3.values.include?("pr35 floatl")
     end
+  end
+
+  def set_time_zone
+    Chronic.time_class = Time.zone
   end
 
   private
