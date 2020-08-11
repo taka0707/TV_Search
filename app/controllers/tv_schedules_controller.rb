@@ -4,9 +4,15 @@ class TvSchedulesController < ApplicationController
   require 'chronic'
 
   def index
+    @events = TvSchedule.all
   end
 
   def search
+    @tvs = []
+    events = TvSchedule.all
+    events.each do |event|
+      @tvs << event
+    end
     word = tv_schedule_params[:keyword]
     if word.present?
       agent = Mechanize.new
@@ -21,13 +27,14 @@ class TvSchedulesController < ApplicationController
         DateTimeEdit(date_docs)
         TitleEdit(title_docs)
         ChannelEdit(channel_docs)
-        @tvs = []
+        # @tvs = []
         @dates.zip(@titles, @channels) do |date, title, channel|
           @tv = TvSchedule.new
           @tv.start_time = date
           @tv.title = title
           @tv.channel = channel
           @tvs << @tv
+          # binding.pry
         end
       else
         flash.now[:alert] = '検索結果はありませんでした。'

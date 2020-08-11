@@ -5,6 +5,7 @@
         <div class="UserName"><%= current_user.name %></div>
         <ul class="link_box">
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+          <li><%= link_to '戻る', root_path, method: :get, class: "logout" %></li>
         </ul>
       </div>
         <%= form_with(url: search_tv_schedules_path, local: true, method: :get, class: "SearchForm") do |form| %>
@@ -13,17 +14,26 @@
         <% end %>
     </div>
       <%= week_calendar number_of_weeks: 1, events: @tvs do |date, tvs| %>
-      
         <%= date.day %>
 
         <% tvs.each do |tv| %>
-          <div class="TvTitle">
-            <ul>
-              <li class="start_time"><%= tv.start_time.to_s(:datetime) %></li>
-              <li class="channel"><%= tv.channel %></li>
-              <li class="title"><%= tv.title %></li>
-            </ul>
-          </div>
+          <% if tv.user_id.present? %>
+            <div class="UserEvent">
+              <ul>
+                <li class="start_time"><%= tv.start_time.to_s(:datetime) %></li>
+                <li class="channel"><%= tv.channel %></li>
+                <li class="title"><%= tv.title %></li>
+              </ul>
+            </div>
+          <% else %>
+            <div class="TvSchedule">
+              <ul>
+                <li class="start_time"><%= tv.start_time.to_s(:datetime) %></li>
+                <li class="channel"><%= tv.channel %></li>
+                <li class="title"><%= tv.title %></li>
+              </ul>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
   <% else %>
