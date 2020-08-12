@@ -1,0 +1,34 @@
+.EventForm {
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-color: darkcyan;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.EventField {
+  padding-bottom: 20px;
+  font-size: 20px;
+  color: black;
+}
+
+label {
+  color: darkorange;
+}
+
+#title {
+  width: 40%;
+}
+
+select {
+  border: 1px solid black;
+  background-color: blanchedalmond;
+  color: black;
+}
+
+#tv_schedule_channel {
+  width: 40%;
+  height: 100px;
+  background-color: blanchedalmond;
+  border: 1px solid black;
+}

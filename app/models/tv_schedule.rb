@@ -1,3 +1,9 @@
 class TvSchedule < ApplicationRecord
-  validates :keyword, presence: { message: 'は１文字以上入力してください。' }
+  belongs_to :user
+
+  with_options presence: true do
+    validates :title
+    validates :start_time
+    validates :channel
+  end
 end

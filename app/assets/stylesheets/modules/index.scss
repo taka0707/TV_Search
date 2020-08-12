@@ -62,19 +62,36 @@ ul {
   width: 80px;
 }
 
-.TvTitle {
+.TvSchedule {
   margin-bottom: 5px;
   border: 1px solid deeppink;
+  
+  .start_time {
+    background-color: #FFDDFF;
+  }
+  
+  .channel {
+    background-color: #FFFFCC;
+  }
+  
+  .title {
+    background-color: #BBFFFF;
+  }
 }
 
-.start_time {
-  background-color: #FFDDFF;
-}
-
-.channel {
-  background-color: #FFFFCC;
-}
-
-.title {
-  background-color: #BBFFFF;
+.UserEvent {
+  margin-bottom: 5px;
+  border: 1px solid deeppink;
+  
+  .start_time {
+    background-color: darkseagreen;
+  }
+  
+  .channel {
+    background-color: #FFFFCC;
+  }
+  
+  .title {
+    background-color: #BBFFFF;
+  }
 }

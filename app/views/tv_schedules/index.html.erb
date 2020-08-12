@@ -4,6 +4,7 @@
       <div class="UserInfo">
         <div class="UserName"><%= current_user.name %></div>
         <ul class="link_box">
+          <li><%= link_to 'イベント作成', new_tv_schedule_path, class: "CreateEvent" %></li>
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
         </ul>
       </div>
@@ -12,16 +13,16 @@
         <%= form.submit "検索", class: "SearchBtn" %>
         <% end %>
     </div>
-      <%= week_calendar number_of_weeks: 1 do |date, tvs| %>
+      <%= week_calendar number_of_weeks: 1, events: @events do |date, events| %>
       
         <%= date.day %>
 
-        <% tvs.each do |tv| %>
-          <div class="TvTitle">
+        <% events.each do |event| %>
+          <div class="UserEvent">
             <ul>
-              <li class="start_time"><%= tv.start_time.to_s(:datetime) %></li>
-              <li class="channel"><%= tv.channel %></li>
-              <li class="title"><%= tv.title %></li>
+              <li class="start_time"><%= event.start_time.to_s(:datetime) %></li>
+              <li class="channel"><%= event.channel %></li>
+              <li class="title"><%= event.title %></li>
             </ul>
           </div>
         <% end %>

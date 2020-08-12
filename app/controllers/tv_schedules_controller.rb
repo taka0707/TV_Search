@@ -4,9 +4,29 @@ class TvSchedulesController < ApplicationController
   require 'chronic'
 
   def index
+    @events = TvSchedule.all
+  end
+
+  def new
+    @tv_schedule = TvSchedule.new
+  end
+
+  def create
+    @tv_schedule = TvSchedule.new(event_params)
+    if @tv_schedule.save
+      redirect_to root_path
+    else
+      flash.now[:alert] = '保存が出来ませんでした。'
+      render :new
+    end
   end
 
   def search
+    @tvs = []
+    events = TvSchedule.all
+    events.each do |event|
+      @tvs << event
+    end
     word = tv_schedule_params[:keyword]
     if word.present?
       agent = Mechanize.new
@@ -21,7 +41,6 @@ class TvSchedulesController < ApplicationController
         DateTimeEdit(date_docs)
         TitleEdit(title_docs)
         ChannelEdit(channel_docs)
-        @tvs = []
         @dates.zip(@titles, @channels) do |date, title, channel|
           @tv = TvSchedule.new
           @tv.start_time = date
@@ -29,6 +48,7 @@ class TvSchedulesController < ApplicationController
           @tv.channel = channel
           @tvs << @tv
         end
+        @tvs.sort_by { |a| a[:start_time] }
       else
         flash.now[:alert] = '検索結果はありませんでした。'
         render :index
@@ -71,5 +91,9 @@ class TvSchedulesController < ApplicationController
 
   def tv_schedule_params
     params.permit(:keyword)
+  end
+
+  def event_params
+    params.require(:tv_schedule).permit(:title, :start_time, :channel).merge(user_id: current_user.id)
   end
 end
