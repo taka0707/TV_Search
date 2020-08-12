@@ -1,19 +1,19 @@
-class TvSchedulesController < ApplicationController
+class EventsController < ApplicationController
   before_action :set_time_zone, only: :DateTimeEdit
   require "nokogiri"
   require 'chronic'
 
   def index
-    @events = TvSchedule.all
+    @events = Event.all
   end
 
   def new
-    @tv_schedule = TvSchedule.new
+    @event = Event.new
   end
 
   def create
-    @tv_schedule = TvSchedule.new(event_params)
-    if @tv_schedule.save
+    @event = Event.new(event_params)
+    if @event.save
       redirect_to root_path
     else
       flash.now[:alert] = '保存が出来ませんでした。'
@@ -23,7 +23,7 @@ class TvSchedulesController < ApplicationController
 
   def search
     @tvs = []
-    events = TvSchedule.all
+    events = Event.all
     events.each do |event|
       @tvs << event
     end
@@ -42,10 +42,10 @@ class TvSchedulesController < ApplicationController
         TitleEdit(title_docs)
         ChannelEdit(channel_docs)
         @dates.zip(@titles, @channels) do |date, title, channel|
-          @tv = TvSchedule.new
+          @tv = Event.new
           @tv.start_time = date
           @tv.title = title
-          @tv.channel = channel
+          @tv.memo = channel
           @tvs << @tv
         end
         @tvs.sort_by { |a| a[:start_time] }
@@ -94,6 +94,6 @@ class TvSchedulesController < ApplicationController
   end
 
   def event_params
-    params.require(:tv_schedule).permit(:title, :start_time, :channel).merge(user_id: current_user.id)
+    params.require(:event).permit(:title, :start_time, :memo).merge(user_id: current_user.id)
   end
 end

@@ -4,11 +4,11 @@
       <div class="UserInfo">
         <div class="UserName"><%= current_user.name %></div>
         <ul class="link_box">
-          <li><%= link_to 'イベント作成', new_tv_schedule_path, class: "CreateEvent" %></li>
+          <li><%= link_to 'イベント作成', new_event_path, class: "CreateEvent" %></li>
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
         </ul>
       </div>
-        <%= form_with(url: search_tv_schedules_path, local: true, method: :get, class: "SearchForm") do |form| %>
+        <%= form_with(url: search_events_path, local: true, method: :get, class: "SearchForm") do |form| %>
         <%= form.text_field :keyword, placeholder: "番組を検索する", class: "SearchInput" %>
         <%= form.submit "検索", class: "SearchBtn" %>
         <% end %>
@@ -21,7 +21,7 @@
           <div class="UserEvent">
             <ul>
               <li class="start_time"><%= event.start_time.to_s(:datetime) %></li>
-              <li class="channel"><%= event.channel %></li>
+              <li class="channel"><%= event.memo %></li>
               <li class="title"><%= event.title %></li>
             </ul>
           </div>
