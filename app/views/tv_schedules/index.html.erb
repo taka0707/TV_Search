@@ -4,6 +4,7 @@
       <div class="UserInfo">
         <div class="UserName"><%= current_user.name %></div>
         <ul class="link_box">
+          <li><%= link_to 'イベント作成', new_tv_schedule_path, class: "CreateEvent" %></li>
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
         </ul>
       </div>
