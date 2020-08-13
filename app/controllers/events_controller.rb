@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_time_zone, only: :DateTimeEdit
+  before_action :authenticate_user!, only: [:new, :search]
   require "nokogiri"
   require 'chronic'
 
