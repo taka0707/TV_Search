@@ -1,5 +1,5 @@
 .simple-calendar {
-  background-color: darkcyan;
+  background-color: #fffafa;
   height: calc(100vh - 100px);
   width: 100vw;
   padding: 10px;
@@ -12,13 +12,18 @@
 
   .calendar-title {
     font-size: 24px;
-    color: darkorange;
+    color: #dc143c;
     font-weight: bold;
     margin: 0 20px;
   }
 
   thead, tbody {
     display: block;
+  }
+
+  thead {
+    color: whitesmoke;
+    background-color: #4169e1;
   }
 
   tbody {
@@ -28,20 +33,20 @@
   }
 
   .table {
-    background-color: deeppink;
+    background-color: #fffafa;
+    border: 1px solid #4169e1;
     width: 100%;
     height: auto;
   }
 
   th {
-    // display: table-cell;
+    background-color: #4169e1;
 	  width: 14vw;
   }
   
   .day {
-    // display: table-cell;
 	  width: 14vw;
-    background-color: floralwhite;
+    background-color: #fffafa;
     vertical-align: top;
     text-align: center;
     height: 100%;
@@ -55,15 +60,7 @@
   .wday-5 {}
   .wday-6 {}
 
-  .today {}
-  .past {}
-  .future {}
-
-  .start-date {}
-
-  .prev-month {}
-  .next-month { }
-  .current-month {}
-
-  .has-events {}
+  .today {
+    border: 2px solid #ff69b4;
+  }
 }

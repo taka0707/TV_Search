@@ -2,13 +2,14 @@
   height: 100vh;
   width: 100vw;
   padding: 20px;
-  background-color: cadetblue;
+  background-color: #fffafa;
 }
 
 .AccountPage_title {
   text-align: center;
   height: 20%;
   font-size: 36px;
+  color: #dc143c;
 }
 
 .FormContents {
@@ -27,6 +28,7 @@ input {
 
 .submit {
   margin: 10px 0;
-  background-color: darkgoldenrod;
+  background-color: #dc143c;
+  color: whitesmoke;
   width: 100px;
 }
