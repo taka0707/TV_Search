@@ -1,7 +1,7 @@
 .EventForm {
   width: 100%;
   height: calc(100vh - 100px);
-  background-color: darkcyan;
+  background-color: #fffafa;
   text-align: center;
   padding: 10px 0;
 }
@@ -13,22 +13,24 @@
 }
 
 label {
-  color: darkorange;
+  color: #4169e1;
+  font-size: 24px;
+  font-weight: bold;
 }
 
-#title {
-  width: 40%;
+#event_title {
+  width: 30%;
 }
 
 select {
   border: 1px solid black;
-  background-color: blanchedalmond;
+  background-color: cornsilk;
   color: black;
 }
 
-#tv_schedule_channel {
+#event_memo {
   width: 40%;
   height: 100px;
-  background-color: blanchedalmond;
+  background-color: cornsilk;
   border: 1px solid black;
 }

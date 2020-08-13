@@ -10,7 +10,7 @@
   </div>
     <div class="EventForm">
       
-        <%= form_with url: tv_schedules_path, model: @tv_schedule, method: :post, local: true do |form| %>
+        <%= form_with url: events_path, model: @event, method: :post, local: true do |form| %>
           <div class="EventField title">
             <%= form.label :title %><br />
             <%= form.text_field :title %>
@@ -22,8 +22,8 @@
           </div>
 
           <div class="EventField">
-            <%= form.label :channel %><br />
-            <%= form.text_area :channel %>
+            <%= form.label :memo %><br />
+            <%= form.text_area :memo %>
           </div>
 
           <div class="EventSubmit">

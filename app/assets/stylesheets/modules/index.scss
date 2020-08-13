@@ -15,21 +15,21 @@ body {
 .wrapper {
   height: 100vh;
   width: 100vw;
-  background-color: darkcyan;
+  background-color: #fffafa;
 }
 
 .header {
   height: 100px;
   width: 100%;
   padding: 10px 40px;
-  background-color: darkcyan;
+  background-color: #fffafa;
   display: flex;
 }
 
 .UserInfo {
   width: 250px;
   text-align: center;
-  color: darkorange;
+  color: #dc143c;
 }
 
 ul {
@@ -43,6 +43,11 @@ ul {
 
 .UserName {
   font-size: 28px;
+  font-weight: bold;
+}
+
+.AppName {
+  font-size: 32px;
   font-weight: bold;
 }
 
@@ -64,10 +69,11 @@ ul {
 
 .TvSchedule {
   margin-bottom: 5px;
-  border: 1px solid deeppink;
+  border: 1px solid #3cb371;
   
   .start_time {
-    background-color: #FFDDFF;
+    background-color: #3cb371;
+    color: whitesmoke;
   }
   
   .channel {
@@ -75,23 +81,26 @@ ul {
   }
   
   .title {
-    background-color: #BBFFFF;
+    background-color: #ff6347;
+    color: white;
   }
 }
 
 .UserEvent {
   margin-bottom: 5px;
-  border: 1px solid deeppink;
+  border: 1px solid #4169e1;
   
   .start_time {
-    background-color: darkseagreen;
+    background-color: #4169e1;
+    color: whitesmoke;
   }
   
-  .channel {
-    background-color: #FFFFCC;
+  .memo {
+    background-color: #ff6347;
+    color: whitesmoke;
   }
   
   .title {
-    background-color: #BBFFFF;
+    background-color: white;
   }
 }
