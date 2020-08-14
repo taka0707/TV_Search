@@ -3,8 +3,7 @@
     <div class="UserInfo">
       <div class="UserName"><%= current_user.name %></div>
       <ul>
-        <li><%= link_to '戻る', root_path, class: "CreateEvent" %></li>
-        
+        <li><%= link_to '戻る', root_path, class: "return" %></li>
       </ul>
     </div>
   </div>
@@ -31,5 +30,6 @@
           </div>
 
         <% end %>
+        <div class="DeleteEvent"><%= link_to '削除', event_path, method: :delete %></div>
     </div>
 </div>
