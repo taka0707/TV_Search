@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_time_zone, only: :DateTimeEdit
   before_action :authenticate_user!, only: [:new, :search, :edit]
+  before_action :set_event, only: [:edit, :update, :destroy]
   require "nokogiri"
   require 'chronic'
 
@@ -23,15 +24,22 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
   end
 
   def update
-    @event = Event.find(params[:id])
     if @event.update(event_params)
       redirect_to root_path
     else
       flash.now[:alert] = '更新が出来ませんでした。'
+      render :edit
+    end
+  end
+
+  def destroy
+    if @event.destroy
+      redirect_to root_path, notice: 'イベントを削除しました。'
+    else
+      flash.now[:alert] = '削除が出来ませんでした。'
       render :edit
     end
   end
@@ -110,5 +118,9 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :start_time, :memo).merge(user_id: current_user.id)
+  end
+
+  def set_event
+    @event = Event.find(params[:id])
   end
 end
