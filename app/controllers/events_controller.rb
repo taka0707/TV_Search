@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_time_zone, only: :DateTimeEdit
-  before_action :authenticate_user!, only: [:new, :search]
+  before_action :authenticate_user!, only: [:new, :search, :edit]
   require "nokogiri"
   require 'chronic'
 
@@ -19,6 +19,20 @@ class EventsController < ApplicationController
     else
       flash.now[:alert] = '保存が出来ませんでした。'
       render :new
+    end
+  end
+
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      redirect_to root_path
+    else
+      flash.now[:alert] = '更新が出来ませんでした。'
+      render :edit
     end
   end
 

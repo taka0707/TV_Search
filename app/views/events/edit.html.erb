@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <div class="header">
+    <div class="UserInfo">
+      <div class="UserName"><%= current_user.name %></div>
+      <ul>
+        <li><%= link_to '戻る', root_path, class: "CreateEvent" %></li>
+        
+      </ul>
+    </div>
+  </div>
+    <div class="EventForm">
+      
+        <%= form_with model: @event, url: event_path(@event.id), local: true do |form| %>
+          <div class="EventField title">
+            <%= form.label :title %><br />
+            <%= form.text_field :title %>
+          </div>
+
+          <div class="EventField">
+            <%= form.label :start_time %><br />
+            <%= form.datetime_select :start_time, class: "StartTime" %>
+          </div>
+
+          <div class="EventField">
+            <%= form.label :memo %><br />
+            <%= form.text_area :memo %>
+          </div>
+
+          <div class="EventSubmit">
+            <%= form.submit "save" %>
+          </div>
+
+        <% end %>
+    </div>
+</div>
